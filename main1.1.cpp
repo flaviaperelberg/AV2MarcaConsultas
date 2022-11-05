@@ -143,47 +143,33 @@ void Pesquisa() {
 	}while(opPesquisa==1);	
 }
 //criação das consultas
-void CriarConsulta(){
-	printf("\n\n_________________________ ESPECIALIDADES _________________________\n\n");
-    printf("\n                      1 - Clínico Geral.\n");
-    printf("\n                      2 - Cardiologista.\n");
-    printf("\n                      3 - Oftalmologista.\n");
-	printf("\n Escolha o número da opção correspondente a especialidade desejada:\n\n");
-	//recolhimento de dados
-	scanf("%d", &consultaOp);
-    system("cls");
-    switch (consultaOp){
-    	case 01:
-    		ClinicoGeral();
-    		break;
-			case 02:
-				Cardiologia(consultaOp);
-				break;
-				case 03:
-					Oftalmologista(consultaOp);
-					break;
-					default:
-						Erro();
-						break;
-						  		
-	}
-} 
-
-//criação de arquivode consulta
-/*
 void Arquivo(){
 	if(consultaOp==1){
+		int opsa;
 		//se a area e clinica geral
 		if(nummedico == 1 && unid == 1 && horario == 1){
 			//Caso tudo seja 1
+			printf("Senhor(a),%s\nCpf: %s", nome, cpf);
+			printf("Sua Consulta foi marcada com sucesso.\n");
+			printf("Unidade :Hospital Fundação Bahiana de Cardiologia\n");
+			printf("Doutor:Dr. Huberto Castro\n");
+			printf("Horario: 18/11/2022, 15:00 horas\n");
+			printf("Agradecemos !!! \n");
+			printf("Favor digitar qualquer tecla para continuar\n");
+			scanf("%d", &opsa);
+
+			system("cls");
 		}
 		if(nummedico == 1 && unid == 2 && horario == 2){
+			printf("TEXTO");
+			system("cls");
 			//Caso apenas o medico seja 1
-		}
+		}if(nummedico == 1 && unid == 2 && horario == 3){
+			printf("TEXTO");
+			system("cls");
 	}
 }
-*/
-
+}
 // caminhos das consultas(marcações).
 void ClinicoGeral(){
 	//Primeira Opção de especialidade.
@@ -221,7 +207,7 @@ void ClinicoGeral(){
 	system("cls");
 	printf("Parabens a sua consulta foi registrada com sucesso\n");
 	printf("O comprovante sera criado em segundos.\n.\n..\n...");
-	//Arquivo();
+	Arquivo();
 	
 	
 }
@@ -263,7 +249,7 @@ void Cardiologia(){
 	system("cls");
 	printf("Parabens a sua consulta foi registrada com sucesso\n");
 	printf("O comprovante sera criado em segundos.\n.\n..\n...");
-	//Arquivo();
+	Arquivo();
 }
 void Oftalmologista(){
 	//Terceira opção
@@ -303,13 +289,36 @@ void Oftalmologista(){
 	system("cls");
 	printf("Parabens a sua consulta foi registrada com sucesso\n");
 	printf("O comprovante sera criado em segundos.\n.\n..\n...");
-	//Arquivo();
+	Arquivo();
 }
 
-//varificação dos dados de cadastro
-void VerificaCadastro(){
-	
-}
+void CriarConsulta(){
+	printf("\n\n_________________________ ESPECIALIDADES _________________________\n\n");
+    printf("\n                      1 - Clínico Geral.\n");
+    printf("\n                      2 - Cardiologista.\n");
+    printf("\n                      3 - Oftalmologista.\n");
+	printf("\n Escolha o número da opção correspondente a especialidade desejada:\n\n");
+	//recolhimento de dados
+	scanf("%d", &consultaOp);
+    system("cls");
+    switch (consultaOp){
+    	case 01:
+    		ClinicoGeral();
+    		break;
+			case 02:
+				Cardiologia();
+				break;
+				case 03:
+					Oftalmologista();
+					break;
+					default:
+						Erro();
+						break;
+						  		
+	}
+} 
+
+//criação de arquivode consulta
 
 
 int main(void){
@@ -325,9 +334,8 @@ setlocale(LC_ALL,"");
 		printf("\n* Seja bem-vindo(a) ao sistema de marcação de consultas! *\n ");
 		printf("\n Para iniciar o atendimento escolha a opção desejada:\n \n");
 		printf("\n  1 - Cadastre-se. \n");
-		printf("\n  2 - Consultar Cadastros.\n");
-		printf("\n  3 - Marcar Consultas\n");
-		printf("\n  4 -  Saida. \n");
+		printf("\n  2 - Marcar Consultas\n");
+		printf("\n  3 -  Saida. \n");
 		//recolhimento de dados
 		scanf("%d", &op);
 		system("cls");
@@ -339,16 +347,13 @@ setlocale(LC_ALL,"");
 					break;
 					
 					case 02:
-						Pesquisa();
+						CriarConsulta();
 						break;
 						
 						case 03:
-							CriarConsulta();
-							break;
 							
-							case 04:
-								system("exit");
-								break;
+							system("exit");
+							break;
 								
 								default:
 										Erro();
