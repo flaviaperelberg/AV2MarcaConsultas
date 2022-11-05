@@ -1,3 +1,4 @@
+
 /*É necessario concertar alguns pontos.
 2   - Faz-se necessario a criação de quatro novas funções para melhor funcionamento do código.
 3   - O escopo das novas funções já foi criado, cada uma tem sua propria explicação no cabeçalho da mesma
@@ -17,17 +18,31 @@
 #include <locale.h>
 #include <time.h>
 #define SIZE 200
-
+//criação de variaveis globais
 char nome[SIZE] [70];
 char nascimento[SIZE][10];
 char email[SIZE] [50];
 char cpf[SIZE][50];
 int numeroSUS;
+int consultaOp, nummedico, unid, op, cpfInt[SIZE];
 
-int numspecialist, nummedico, unid, op, cpfInt[SIZE];
 
 
-void cadastro(){
+//mensagem de erro
+void Erro(){
+	printf("\n________________________________________________________________\n");
+	printf("\n__________________________ SUS UniRuy __________________________\n");  
+	printf("\n___________________________ !!!Erro!!! _________________________\n");
+	printf("\n__                                                            __\n");
+	printf("\n__           Valor digitado não confere com as opções         __\n");
+	printf("\n__                                                            __\n");
+	printf("\n__               Favor digitar um valor coerente	     		__\n");
+	printf("\n________________________________________________________________\n");
+	printf("\n_______________________ UniRuy Consultas _______________________\n");
+	printf("\n________________________________________________________________\n");
+}
+
+void Cadastro(){
 
 	static int linha;
 	int opCadastro;
@@ -68,7 +83,7 @@ void cadastro(){
 	
 	
 }
-void pesquisa() {
+void Pesquisa() {
 	char cpfPesquisa[50];
 	char emailPesquisa[50];
 	int i;
@@ -119,23 +134,11 @@ void pesquisa() {
 		system("cls");
 	}while(opPesquisa==1);	
 }
-// menu para especialidades
-void specialist () {
-	printf("\n\n_________________________ ESPECIALIDADES _________________________\n\n");
-    printf("\n                      1 - Clínico Geral.\n\n");
-    printf("\n                      2 - Cardiologista.\n\n");
-    printf("\n                      3 - Oftalmologista.\n\n");
-    printf("\n                      4 - Pediatra.\n\n");
-    printf("\n                      5 - Ortopedista e Traumatologia.\n\n");
-    printf("\n                      6 - Neurologista e Psiquiatra.\n\n");
-    printf("\n                      7 - Ginecologista e Obstetra.\n\n");
 
-	printf("\nPor favor, escolha o número da opção correspondente a especialidade desejada:\n\n");
-	scanf("%d", &numspecialist);
-    system("cls");
-}
-void specialistMedicos1(){
-  	printf("\n\n_________________________ ESPECIALISTAS _________________________\n\n");  
+// caminhos das consultas(marcações).
+void ClinicoGeral(int opcao){
+	//Primeira Opção de especialidade.
+	printf("\n\n_________________________ ESPECIALISTAS _________________________\n\n");  
   	printf("\n\n_________________________ Clínica Geral _________________________\n\n");
 	printf("\n                      1 - Dr. Huberto Castro.\n\n");
     printf("\n                      2 - Drª. Liandra Cerqueira.\n\n");
@@ -145,8 +148,15 @@ void specialistMedicos1(){
     printf("\nEscolha o número da opção correspondente ao médico de sua preferência:\n\n");
 	scanf("%d", &nummedico);
 	system("cls");
+	printf("\n\n1 - Unidade de Saúde da Familia Brotas\n");
+	printf("\n\n2 - Unidade de Saúde da Familia Ribeira\n");
+	printf("\n\n3 - Unidade de Saúde da Familia Boca do Rio\n");	
+	printf("\n\nEscolha o número da opção correspondente a unidade de sua preferência:\n\n");
+	scanf("%d", &unid);
+	system("cls");
 }
-void specialistMedicos2(){
+void Cardiologia(int opcao){
+	//Segunda opção.
 	printf("\n\n_________________________ ESPECIALISTAS __________________________\n");  
   	printf("\n\n__________________________ Cardiologia ___________________________\n");
 	printf("\n__                      1 - Dr. Pedro Paulo Souza.                __\n");
@@ -158,7 +168,8 @@ void specialistMedicos2(){
     scanf("%d", &nummedico);
     system("cls");
 }
-void specialistMedicos3 (){
+void Oftalmologista(int opcao){
+	//Terceira opção
 	printf("\n_________________________ ESPECIALISTAS __________________________\n");  
   	printf("\n__________________________ Oftamologia ___________________________\n");
   	printf("\n__                      1 - Drª. Flavia Perelberg.              __\n");
@@ -169,87 +180,61 @@ void specialistMedicos3 (){
     printf("\nEscolha o número da opção correspondente ao médico de sua preferência:\n\n");
 	scanf("%d", &nummedico);
 	system("cls");
+	switch
+	
 }
-void specialistMedicos4 (){ 
-    printf("\n_________________________________________________________________\n");
-	printf("\n_________________________ ESPECIALISTAS _________________________\n");  
-  	printf("\n___________________________ Pediatria ___________________________\n");
-  	printf("\n__                      1 - Drª. Alderiza Costa.               __\n");
-    printf("\n__                      2 - Drª. Lis Alphontes.                __\n");
-    printf("\n__                      3 - Dr. Luiz Dahora.                   __\n");
-    printf("\n_________________________________________________________________\n");
-    printf("\n_________________________ ESPECIALISTAS _________________________\n");
-    printf("\n_________________________________________________________________\n");
-    
-    printf("\nEscolha o número da opção correspondente ao médico de sua preferência:\n\n");
-	scanf("%d", &nummedico);
-	system("cls");
-}
-void specialistMedicos5 (){
-	printf("\n\n_________________________ ESPECIALISTAS _________________________\n\n");  
-  	printf("\n\n___________________ Ortopedia e Traumatologia ___________________\n\n");
-  	printf("\n                      1 - Dr. Huberto Celestim.\n\n");
-    printf("\n                      2 - Drª. Amanda Almeid.\n\n");
-    printf("\n                      3 - Dr. Hildebrando Caetano.\n\n");
-    
-    printf("\nEscolha o número da opção correspondente ao médico de sua preferência:\n\n");
-	scanf("%d", &nummedico);
-	system("cls");
-}
-void specialistMedicos6 () {
-	printf("\n\n_________________________ ESPECIALISTAS _________________________\n\n");  
-  	printf("\n\n____________________ Neurologia e Psiquiatria ___________________\n\n");
-  	printf("\n                      1 - Drª. Talita Rocha.\n\n");
-    printf("\n                      2 - Dr. Amorim.\n\n");
-    printf("\n                      3 - Dr. Joaquim.\n\n");
-    
-    printf("\nEscolha o número da opção correspondente ao médico de sua preferência:\n\n");
-	scanf("%d", &nummedico);
-	system("cls");
-}
-void specialistMedicos7 () {  
-    printf("\n\n_________________________ ESPECIALISTAS _________________________\n\n");  
-  	printf("\n\n____________________ Ginecologia e Obstetricia ___________________\n\n");
-  	printf("\n                      1 - Drª. Celso Rodrigues.\n\n");
-    printf("\n                      2 - Dr. Lorena Viega.\n\n");
-    printf("\n                      3 - Dr. Patricia Lima.\n\n");
-    
-    printf("\nEscolha o número da opção correspondente ao médico de sua preferência:\n\n");
-	scanf("%d", &nummedico);
-	system("cls");
-}
-void unidades () {
+//seleção da unidade
+void Unidades (int opcao) {
+	
 	printf("\n\n1 - Unidade de Saúde da Familia Brotas\n");
 	printf("\n\n2 - Unidade de Saúde da Familia Ribeira\n");
-	printf("\n\n3 - Unidade de Saúde da Familia Boca do Rio\n");
-	printf("\n\n4 - Unidade de Saúde da Familia Itapuã\n");
-	printf("\n\n5 - Unidade de Saúde da Familia Itinga\n");
-	printf("\n\n6 - Hospital da Mulher\n");
-	printf("\n\n7 - Hospital Geral do Estado\n");
-	printf("\n\n8 - Hospital Menandro de Farias\n");
-	
+	printf("\n\n3 - Unidade de Saúde da Familia Boca do Rio\n");	
 	printf("\n\nEscolha o número da opção correspondente a unidade de sua preferência:\n\n");
 	scanf("%d", &unid);
 	system("cls");
 }
 
 //lugar onde os possiveis horarios estarão disponiveis
-void banco(){
+void Banco(){
 	
 }
 //varificação dos dados de cadastro
-void verificaCadastro(){
+void VerificaCadastro(){
 	
 }
 //verificação dos dados de login
-void verificaLogin(){
+void VerificaLogin(){
 	
 }
 //confirmação dos dados da consulta
-void criarConsulta(){
+void CriarConsulta(){
+	printf("\n\n_________________________ ESPECIALIDADES _________________________\n\n");
+    printf("\n                      1 - Clínico Geral.\n");
+    printf("\n                      2 - Cardiologista.\n");
+    printf("\n                      3 - Oftalmologista.\n");
+
+
+	printf("\n Escolha o número da opção correspondente a especialidade desejada:\n\n");
+	scanf("%d", &consultaOp);
+    system("cls");
+    switch (consultaOp){
+    	case 01:
+    		ClinicoGeral(consultaOp);
+    		break;
+			case 02:
+				Cardiologia(consultaOp);
+				break;
+				case 03:
+					Oftalmologista(consultaOp);
+					break;
+					default:
+						Erro();
+						break;
+						  		
+	}
 } 
 //criação de arquivode consulta
-void arquivo(){
+void Arquivo(){
 	
 }
 
@@ -259,22 +244,77 @@ setlocale(LC_ALL,"");
     //estrutura de boas vindas.
     
     do{//estrutura de repetição para cadastro, existe um parametro de armazenamento implementado no código.
-		printf("\n* --------------------- SISTEMA ---------------------- *\n\n");
-		printf("\n* -------------------- SUS UniRuy -------------------- *\n \n ");
-		printf("\n \n* Seja bem-vindo(a) ao sistema de marcação de consultas! *\n \n ");
-		printf("\n \nPara iniciar o atendimento escolha a opção desejada:\n \n");
-		printf("\n\n  1 - Cadastre-se. \n \n  2 - Consultar Cadastros.\n \n  3 - Já Tenho Cadastro.\n\n  4 -  Saida. \n\n");
+		printf("\n* --------------------- SISTEMA ---------------------- *\n");
+		printf("\n* -------------------- SUS UniRuy -------------------- *\n ");
+		printf("\n* Seja bem-vindo(a) ao sistema de marcação de consultas! *\n ");
+		printf("\n Para iniciar o atendimento escolha a opção desejada:\n \n");
+		printf("\n  1 - Cadastre-se. \n");
+		printf("\n  2 - Consultar Cadastros.\n");
+		printf("\n  3 - Marcar Consultas\n");
+		printf("\n  4 -  Saida. \n");
 		scanf("%d", &op);
 		system("cls");
 		
-		if(op==4)break;//saida forçada do "do".
+		//implementação de switch para opções
+			switch(op){
+				case 01:
+					Cadastro();
+					break;
+					
+					case 02:
+						Pesquisa();
+						break;
+						
+						case 03:
+							CriarConsulta();
+							break;
+							
+							case 04:
+								system("exit");
+								break;
+								
+								default:
+										Erro();
+			}
+			}while(op!= 4);
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		/*if(op==4)break;//saida forçada do "do".
 		
 		switch(op) {
 			case 1:
 				cadastro();
 				system("cls");
 				//if já dentro de um outro método, não faz parte do boas vindas
-				
 				if (op==1){
 					specialist();
 					    switch(numspecialist){//condições em cadeia
@@ -290,25 +330,8 @@ setlocale(LC_ALL,"");
 								specialistMedicos3 ();
 								unidades();
 								break;
-							case 4:
-								specialistMedicos4 ();
-								unidades();
-								break;
-							case 5:
-								specialistMedicos5 ();
-								unidades();
-								break;
-							case 6:
-	    						specialistMedicos6 ();
-	    						unidades();
-	    						break;
-							case 7:
-	    						specialistMedicos7 ();
-	    						unidades();
-								break;
 							default:
-								while(numspecialist>=7 || numspecialist<=1){//laço de repetição que força o usuario digitar um valor aceito
-								printf("\n\n__________________________________________________________________\n\n");
+																printf("\n\n__________________________________________________________________\n\n");
 								printf("\n\n*_____________________ Opção inválida!!! _____________________* \n\n ");
 								printf("\n\n_________________ Por favor, Tente novamente!!! _______________\n\n ");	
     							printf("\n\n__________________________________________________________________\n\n");
@@ -316,8 +339,8 @@ setlocale(LC_ALL,"");
 								specialist();
 								
 								break;//ele volta para o MENU principal, deveria voltar para especialistas e entrar na opcao!!!
-						}system("cls");
-				}	
+						system("cls");
+				}	}
 				break;
 			case 2:
 				pesquisa();
@@ -346,3 +369,4 @@ setlocale(LC_ALL,"");
 	}*/
 
 }
+
