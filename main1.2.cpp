@@ -6,48 +6,48 @@
 #include <time.h>
 #define SIZE 200
 
-//cria��o de variaveis globais
+//criação de variáveis globais
 char nome[SIZE] [70];
 char nascimento[SIZE][10];
 char email[SIZE] [50];
 char cpf[SIZE][50];
-// variaveis de op��o
+// variaveis de opção
 int consultaOp, nummedico, unid, op, cpfInt[SIZE], horario;
 
 // "Banco de dados" Matrizes
 
 //Areas
-char areas[3][20] ={{"Clinico Geral."},
+char areas[3][20] ={{"Clínico Geral."},
 					 	 {"Cardiologista."},
 					  	 {"Oftalmologista."}};
 
 //doutores
 char doutoresCG[3][30]= {{"Dr. Huberto Castro"},
-					 	 {"Dr.a. Liandra Cerqueira."},
-					  	 {"Dr. Magno Flor�ncio."}};	
+					 	 {"Dra. Liandra Cerqueira."},
+					  	 {"Dr. Magno Flor?ncio."}};	
 						   				 
 char doutoresCa[3][30]= {{"Dr. Pedro Paulo Souza."},
 					 	 {"Dr. Victor Almeida."},
 					  	 {"Dr. Robert de Jesus."}};
 						   	
-char doutoresOf[3][30]= {{"Dr�. Flavia Perelberg."},
+char doutoresOf[3][30]= {{"Dra. Flavia Perelberg."},
 					 	 {"Dr. Matheus Costa."},
-					  	 {"Dr. Jo�o Carlos."}};	
+					  	 {"Dr. João Carlos."}};	
 
 //unidades
-char unidCG[3][70] = {{"Hospital Clinico Geral."},
-					  {"Cl�nica Geral de Salvador."},
-					  {"Unidade Das Clinicas Gerais de Salvador."}};
+char unidCG[3][70] = {{"Hospital Clínico Geral."},
+					  {"Clínica Geral de Salvador."},
+					  {"Unidade Das Clínicas Gerais de Salvador."}};
 					
-char unidCa[3][70]= { {"Hospital Funda��o Bahiana de Cardiologial."},
-					  {"Cl�nica Geral de Salvador."},
-					  {"Cl�nica Centrocor - Cl�nica de Cardiologia em Salvador."}};
+char unidCa[3][70]= { {"Hospital Fundação Bahiana de Cardiologia."},
+					  {"Clínica Geral de Salvador."},
+					  {"Clínica Centrocor - Clínica de Cardiologia em Salvador."}};
 		
-char unidOf[3][70]= { {"Cl�nica Provision Oftalmologia."},
+char unidOf[3][70]= { {"Clínica Provision Oftalmologia."},
 					  {"Hospital de Olhos."},
 					  {"DayHORC Hospital dos Olhos."}};
 
-//horarios
+//horários
 char horarioCG[3][30]= {{"18/11/2022, 15:00 horas."},
 					 	{"18/11/2022, 10:00 horas."},
 					  	{"20/11/2022, 11:00 horas."}};	
@@ -69,9 +69,9 @@ void Erro(){
 	printf("\n__________________________ SUS UniRuy __________________________\n");  
 	printf("\n___________________________ !!!Erro!!! _________________________\n");
 	printf("\n__                                                            __\n");
-	printf("\n__           Valor digitado n�o confere com as op��es         __\n");
+	printf("\n__        Valor digitado não correspondente com as opções     __\n");
 	printf("\n__                                                            __\n");
-	printf("\n__               Favor digitar um valor coerente	     		__\n");
+	printf("\n__              Por favor, digite um valor válido	    		__\n");
 	printf("\n________________________________________________________________\n");
 	printf("\n_______________________ UniRuy Consultas _______________________\n");
 	printf("\n________________________________________________________________\n");
@@ -85,27 +85,24 @@ int consVar, medico, unida, horarios;
  	horarios=  horario -1;
 int varInsignificante;
 
-
-
-	printf("\n\n_________________________ ESPECIALIDADES _________________________\n\n");
+	printf("\n\n_________________________ ESPECIALIDADES ________________________\n\n");
     printf("\n                      1 - %s\n",areas[0]);
     printf("\n                      2 - %s\n",areas[1]);
     printf("\n                      3 - %s\n",areas[2]);
-	printf("\n Escolha o n�mero da op��o correspondente a especialidade desejada:\n\n");
+	printf("\n Escolha o número da opção correspondente a especialidade desejada:\n\n");
 	//recolhimento de dados
 	scanf("%d", &consultaOp);
     system("cls");
     switch (consultaOp){
     	case 01:
-    		//Primeira Op��o de especialidade.
+    		//Primeira Opção de especialidade.
 					printf("\n\n_________________________ ESPECIALISTAS _________________________\n\n");  
-				  	printf("\n\n_________________________ Cl�nica Geral _________________________\n\n");
+				  	printf("\n\n_________________________ Clínica Geral _________________________\n\n");
 					printf("\n                      1 - %s\n\n",doutoresCG[0]);
 				    printf("\n                      2 - %s\n\n",doutoresCG[1]);
 				    printf("\n                      3 - %s\n\n",doutoresCG[2]);
-				    printf("\n_________________________ ESPECIALISTAS _________________________\n");
 				    
-				    printf("\nEscolha o n�mero da op��o correspondente ao m�dico de sua prefer�ncia:\n\n");
+				    printf("\nEscolha o número da opção correspondente ao médico de sua preferência:\n\n");
 					//recolhimento de dados
 					scanf("%d", &nummedico);
 					
@@ -115,14 +112,14 @@ int varInsignificante;
 									printf("Dr. Huberto Castro.\n");
 									break;
 									case 02:
-									printf("Dr�. Liandra Cerqueira.\n");
+									printf("Dra. Liandra Cerqueira.\n");
 									break;
 									case 03:
-									printf("Dr. Magno Flor�ncio.\n");
+									printf("Dr. Magno Florêncio.\n");
 									break;
 									
 									default:
-										printf("Erro. retorne ao inicio.\n");
+										printf("Erro. Retorne ao início.\n");
 											//limpeza de tela
 											system("cls");
 										CriarConsulta();
@@ -136,24 +133,24 @@ int varInsignificante;
 					printf("\n\n1 - %s\n",unidCG[0]);
 					printf("\n\n2 - %s\n",unidCG[1]);
 					printf("\n\n3 - %s\n",unidCG[2]);	
-					printf("\n\nEscolha o n�mero da op��o correspondente a unidade de sua prefer�ncia:\n\n");
+					printf("\n\nEscolha o número da opção correspondente a unidade de sua preferência:\n\n");
 					//recolhimento de dados
 					scanf("%d", &unid);
 					
 					//testes de entrada de dados
 					switch(unid){
 								case 01:
-									printf("Hospital Clinico Geral.\n");
+									printf("Hospital Clínico Geral.\n");
 									break;
 									case 02:
-									printf("Cl�nica Geral de Salvador.\n");
+									printf("Clínica Geral de Salvador.\n");
 									break;
 									case 03:
-									printf("Unidade Das Clinicas Gerais de Salvadors.\n");
+									printf("Unidade Das Clínicas Gerais de Salvador.\n");
 									break;
 									
 									default:
-										printf("Erro. retorne ao inicio.\n");
+										printf("Erro. Retorne ao inicio.\n");
 																					//limpeza de tela
 											system("cls");
 										CriarConsulta();
@@ -163,8 +160,8 @@ int varInsignificante;
 					//limpa tela
 					system("cls");
 					
-					//Texto para apresenta��o das possiveis datas.
-					printf("Os possiveis horarios s�o\n");
+					//Texto para apresentação das possíveis datas e horários.
+					printf("Horários disponíveis: \n");
 					
 					printf("1 - %s\n", horarioCG[0]);
 					printf("2 - %s\n", horarioCG[1]);
@@ -184,7 +181,7 @@ int varInsignificante;
 									break;
 									
 									default:
-										printf("Erro. retorne ao inicio.\n");
+										printf("Erro. Retorne ao início.\n");
 										//limpeza de tela
 											system("cls");
 										CriarConsulta();
@@ -193,41 +190,37 @@ int varInsignificante;
 					
 					//limpeza de tela
 					system("cls");
-					//confirma��o1/2
-							printf("Parabens a sua consulta foi registrada com sucesso\n");
-							printf("O comprovante sera criado em segundos.\n.\n..\n...\n\nClique em qualquer tecla\n");
+					//confirma??o1/2
+							printf("Sua consulta foi marcada com sucesso!\n");
+							printf("O comprovante será criado em segundos.\n.\n..\n...\n\nClique em qualquer tecla.\n");
 							scanf("%",&varInsignificante);
 							
 		//limpeza de tela
 		system("cls");
 		
-						// finaliza��o
-				printf("Parabens a sua consulta foi marcada com sucesso!!\n");
+						// finalização
+				printf("Sua consulta foi marcada com sucesso!\n");
 				printf("Area:%s",areas[consVar]);
-				printf("senhor(a):%s\n",nome);
+				printf("Senhor(a):%s\n",nome);
 				printf("CPF: %s\n",cpf);
-				printf("Email:\n",email);
-				printf("Sua consulta foi marcada para a unidade de saude :%s\n",unidCG[unida]);
+				printf("E-mail:\n",email);
+				printf("Sua consulta foi marcada para a unidade de sáude :%s\n",unidCG[unida]);
 				printf("Doutor(a): %s\n",doutoresCG[medico]);
-				printf("Horario: %s\n",horarioCG[horarios]);
-				printf("Clique em qualquer tecla\n");
+				printf("Horário: %s\n",horarioCG[horarios]);
+				printf("Clique em qualquer tecla.\n");
 				scanf("%",&varInsignificante);
 		 			break;
     		
-    		
-    		
 			case 02:
 				
-				
-				//Segunda op��o.
+				//Segunda opção
 						printf("\n\n_________________________ ESPECIALISTAS __________________________\n");  
 					  	printf("\n\n__________________________ Cardiologia ___________________________\n");
 						printf("\n                      1 - %s\n\n",doutoresCa[0]);
 					    printf("\n                      2 - %s\n\n",doutoresCa[1]);
 					    printf("\n                      3 - %s\n\n",doutoresCa[2]);
-					    printf("\n_________________________ ESPECIALISTAS ____________________________\n");
-					    printf("\nEscolha o n�mero da op��o correspondente ao m�dico de sua prefer�ncia:\n");
-					  	//recebendo a variavel  
+					    printf("\nEscolha o número da opção correspondente ao médico de sua preferência:\n");
+					  	//recebendo a variável  
 					    scanf("%d", &nummedico);
 					    
 					    //testes de entrada de dados
@@ -243,7 +236,7 @@ int varInsignificante;
 									break;
 									
 									default:
-										printf("Erro. retorne ao inicio.\n");
+										printf("Erro. Retorne ao início.\n");
 											//limpeza de tela
 											system("cls");
 										CriarConsulta();
@@ -258,24 +251,24 @@ int varInsignificante;
 						printf("\n\n1 - %s\n",unidCa[0]);
 						printf("\n\n2 - %s\n",unidCa[1]);
 						printf("\n\n3 - %s\n",unidCa[2]);
-						printf("\n\nEscolha o n�mero da op��o correspondente a unidade de sua prefer�ncia:\n\n");
+						printf("\n\nEscolha o número da opção correspondente a unidade de sua preferência:\n\n");
 						//recolhimento de dados
 						scanf("%d", &unid);
 						
 						//testes de entrada de dados
 						switch(unid){
 								case 01:
-									printf("Hospital Funda��o Bahiana de Cardiologia.\n");
+									printf("Hospital Fundação Bahiana de Cardiologia.\n");
 									break;
 									case 02:
-									printf("Cl�nica Centrocor - Cl�nica de Cardiologia em Salvador.\n");
+									printf("Clínica Centrocor - Clínica de Cardiologia em Salvador.\n");
 									break;
 									case 03:
-									printf("Unidade Procard�aco.\n");
+									printf("Unidade Procardíaco.\n");
 									break;
 									
 									default:
-										printf("Erro. retorne ao inicio.\n");
+										printf("Erro. Retorne ao início.\n");
 											//limpeza de tela
 											system("cls");
 										CriarConsulta();
@@ -285,8 +278,8 @@ int varInsignificante;
 						//limpa tela
 						system("cls");
 						
-						//Texto para apresenta��o das possiveis datas.
-						printf("Os possiveis horarios s�o\n");
+						//Texto para apresentação das possíveis datas.
+						printf("Horários Disponíveis:\n");
 						
 						printf("1 - %s\n", horarioCa[0]);
 						printf("2 - %s\n", horarioCa[1]);
@@ -306,68 +299,63 @@ int varInsignificante;
 									break;
 									
 									default:
-										printf("Erro. retorne ao inicio.\n");
+										printf("Erro. Retorne ao início.\n");
 											//limpeza de tela
 											system("cls");
 										CriarConsulta();
 										break;
 							}
 						
-						
 						//limpeza de tela
 						system("cls");
 						
-						//confirma��o1/2
-							printf("Parabens a sua consulta foi registrada com sucesso\n");
+						//confirma??o1/2
+							printf("Parabéns a sua consulta foi registrada com sucesso\n");
 							printf("O comprovante sera criado em segundos.\n.\n..\n...\n\nClique em qualquer tecla\n");
 							scanf("%",&varInsignificante);
 							
 		//limpeza de tela
 		system("cls");
 		
-						//a finaliza��o
-						printf("Parabens a sua consulta foi marcada com sucesso!!\n");
+						//a finaliza??o
+						printf("Sua consulta foi marcada com sucesso!\n");
 						printf("Area:%s",areas[consVar]);
-						printf("senhor(a):%s\n",nome);
+						printf("Senhor(a):%s\n",nome);
 						printf("CPF: %s\n",cpf);
-						printf("Email:\n",email);
-						printf("Sua consulta foi marcada para a unidade de saude :%s\n",unidCa[unida]);
+						printf("E-mail:\n",email);
+						printf("Sua consulta foi marcada para a unidade de saúde :%s\n",unidCa[unida]);
 						printf("Doutor(a): %s\n",doutoresCa[medico]);
-						printf("Horario: %s\n",horarioCa[horarios]);
-						printf("Clique em qualquer tecla\n");
+						printf("Horário: %s\n",horarioCa[horarios]);
+						printf("Clique em qualquer tecla.\n");
 							scanf("%",&varInsignificante);
 									
-				break;
-				
-				
-				
+				break;	
 				
 				case 03:
 					
-											//Terceira op��o
+											//Terceira opção
 							printf("\n_________________________ ESPECIALISTAS __________________________\n");  
 						  	printf("\n__________________________ Oftamologia ___________________________\n");
 						  	printf("\n                      1 - %s\n\n",doutoresOf[0]);
 						    printf("\n                      2 - %s\n\n",doutoresOf[1]);
-						    printf("\n                      3 - %s\n\n",doutoresOf[2]);
-						    printf("\n_________________________ ESPECIALISTAS __________________________\n");	
-						    printf("\nEscolha o n�mero da op��o correspondente ao m�dico de sua prefer�ncia:\n");
-							//recebendo a variavel  
+						    printf("\n                      3 - %s\n\n",doutoresOf[2]);	
+						    printf("\nEscolha o número da opção correspondente ao médico de sua preferência:\n");
+							//recebendo a variável  
 							scanf("%d", &nummedico);
 							
 							switch(nummedico){
 								case 01:
-									printf("Dr�. Flavia Perelberg\n");
+									printf("Dra. Flavia Perelberg.\n");
 									break;
 									case 02:
-									printf("Dr. Matheus Costa\n");
+									printf("Dr. Matheus Costa.\n");
 									break;
 									case 03:
-									printf("Dr. Jo�o Carlos\n");
+									printf("Dr. João Carlos.\n");
 									break;
 									
 									default:
-										printf("Erro. retorne ao inicio.\n");
+										printf("Erro. Retorne ao início.\n");
 											//limpeza de tela
 											system("cls");
 										CriarConsulta();
@@ -382,13 +370,13 @@ int varInsignificante;
 							printf("\n\n1 - %s\n",unidOf[0]);
 							printf("\n\n2 - %s\n",unidOf[1]);
 							printf("\n\n3 - %s\n",unidOf[2]);
-							printf("\n\nEscolha o n�mero da op��o correspondente a unidade de sua prefer�ncia:\n\n");
+							printf("\n\nEscolha o número da opção correspondente a unidade de sua preferência:\n\n");
 							//recolhimento de dados
 							scanf("%d", &unid);
 							
 							switch(unid){
 								case 01:
-									printf("Cl�nica Provision Oftalmologia.\n");
+									printf("Clínica Provision Oftalmologia.\n");
 									break;
 									case 02:
 									printf("Hospital de Olhos.\n");
@@ -398,7 +386,7 @@ int varInsignificante;
 									break;
 									
 									default:
-										printf("Erro. retorne ao inicio.\n");
+										printf("Erro. Retorne ao início.\n");
 											//limpeza de tela
 											system("cls");
 										CriarConsulta();
@@ -408,8 +396,8 @@ int varInsignificante;
 							//limpa tela
 							system("cls");
 							
-							//Texto para apresenta��o das possiveis datas.
-								printf("Os possiveis horarios s�o\n");
+							//Texto para apresentação das possíveis datas.
+								printf("Horários disponíveis:\n");
 
 							printf("1 - %s\n", horarioOf[0]);
 							printf("2 - %s\n", horarioOf[1]);
@@ -428,7 +416,7 @@ int varInsignificante;
 									break;
 									
 									default:
-										printf("Erro. retorne ao inicio.\n");
+										printf("Erro. Retorne ao início.\n");
 										//limpeza de tela
 											system("cls");
 										CriarConsulta();
@@ -438,22 +426,22 @@ int varInsignificante;
 							//limpeza de tela
 							system("cls");
 							
-							//confirma��o1/2
-							printf("Parabens a sua consulta foi registrada com sucesso\n");
-							printf("O comprovante sera criado em segundos.\n.\n..\n...\n\nClique em qualquer tecla\n");
+							//confirma??o1/2
+							printf("Sua consulta foi marcada com sucesso!\n");
+							printf("O comprovante será criado em segundos.\n.\n..\n...\n\nClique em qualquer tecla.\n");
 							scanf("%",&varInsignificante);
 							
 		//limpeza de tela
 		system("cls");
-							printf("Parabens a sua consulta foi marcada com sucesso!!\n");
+							printf("Parabéns a sua consulta foi marcada com sucesso!!\n");
 							printf("Area:%s",areas[consVar]);
-							printf("senhor(a):%s\n",nome);
+							printf("Senhor(a):%s\n",nome);
 							printf("CPF: %s\n",cpf);
-							printf("Email:\n",email);
-							printf("Sua consulta foi marcada para a unidade de saude :%s\n",unidOf[unida]);
+							printf("E-mail:\n",email);
+							printf("Sua consulta foi marcada para a unidade de saúde :%s\n",unidOf[unida]);
 							printf("Doutor(a): %s\n",doutoresOf[medico]);
-							printf("Horario: %s\n",horarioOf[horarios]);;
-							printf("Clique em qualquer tecla\n");
+							printf("Horário: %s\n",horarioOf[horarios]);;
+							printf("Clique em qualquer tecla.\n");
 							scanf("%",&varInsignificante);
 					
 								break;
@@ -464,13 +452,12 @@ int varInsignificante;
 	}
 }
 
-
 void Cadastro(){
 
 	static int linha;
 	int opCadastro;
 	do{
-	//obten��o dos dados do cliente
+	//obten??o dos dados do cliente
 		fflush(stdin);
 		printf("\nPor favor, digite seu nome completo: \n\n\n");
 		gets(nome[linha]);
@@ -502,7 +489,7 @@ void Cadastro(){
 		
 	
 		//clausula de saida do looping.
-		printf("\n \nDigite 1 para continuar com a marca��o, ou outro valor para sair\n \n");
+		printf("\n \nDigite 1 para continuar com a marcação ou outro valor para sair:\n \n");
 		scanf("%d", &op);
 		if(op==1){
 			CriarConsulta();
@@ -513,7 +500,7 @@ void Cadastro(){
 		
 		//limpa tela
 		system("cls");
-			//o sistema est� terminando aqui, deve ser concertado.
+		system("cls");
 	}while(opCadastro==1);
 	
 }
@@ -524,7 +511,7 @@ void Pesquisa() {
 	int i;
 	int opPesquisa;
 	do{
-		printf("Digite 1 para pesquisar por CPF ou 2 para pesquisar por email: \n");
+		printf("Digite 1 para pesquisar por CPF ou 2 para pesquisar por e-mail: \n");
 		scanf("%d", &opPesquisa);
 		switch(opPesquisa) {
 			case 1:
@@ -532,7 +519,7 @@ void Pesquisa() {
 				scanf("%s", &cpfPesquisa);
 				for(i=0;i<SIZE;i++) {
 					if(strcmp(cpf[i], cpfPesquisa)==0) {
-						printf("\nNome: %s\nData de Nascimento: %s\nEmail: %s\nCPF: %s", nome[i], nascimento[i], email[i], cpf[i]);
+						printf("\nNome: %s\nData de Nascimento: %s\nE-mail: %s\nCPF: %s", nome[i], nascimento[i], email[i], cpf[i]);
 						break;
 					}
 					if(i==199){
@@ -540,7 +527,7 @@ void Pesquisa() {
 						//printf("\n%d",i);
 					}
 					if(strcmp(cpf[i], cpfPesquisa)!=0 && i == SIZE){
-						printf("Pessoa n�o encontrada !");
+						printf("Pessoa não encontrada!");
 					}
 				}
 				break;
@@ -549,19 +536,19 @@ void Pesquisa() {
 				scanf("%s", emailPesquisa);
 				for(i=0; i<SIZE; i++) {
 					if(strcmp(email[i], emailPesquisa)==0) {
-						printf("\nNome: %s\nData de Nascimento: %s\nEmail: %s\nCPF: %s", nome[i], nascimento[i], email[i], cpf[i]);
+						printf("\nNome: %s\nData de Nascimento: %s\nE-mail: %s\nCPF: %s", nome[i], nascimento[i], email[i], cpf[i]);
 					}
 					if(i==199){
 						i+=1;
 						//printf("\n%d",i);
 					}
 					else if(strcmp(email[i], emailPesquisa)!=0 && i == SIZE){
-						printf("Pessoa n�o encontrada !");
+						printf("Pessoa não encontrada!");
 					}
 				}
 				break;
 			default:
-				printf("\n Op��o invalida");	
+				printf("\n Opção inválida");	
 				break;
 		}
 		printf("\n\nDigite 1 para continuar pesquisando ou outro valor para sair: ");
@@ -570,28 +557,26 @@ void Pesquisa() {
 	}while(opPesquisa==1);	
 }
 
-
-
 int main(void){
 setlocale(LC_ALL,"");
 
     //estrutura de boas vindas.
     
     do{
-	//estrutura de repeti��o para cadastro, existe um parametro de armazenamento implementado no c�digo.
-	//texto de apresenta��o, necessario a estiliza��o
-		printf("\n* --------------------- SISTEMA ---------------------- *\n");
-		printf("\n* -------------------- SUS UniRuy -------------------- *\n ");
-		printf("\n* Seja bem-vindo(a) ao sistema de marca��o de consultas! *\n ");
-		printf("\n Para iniciar o atendimento escolha a op��o desejada:\n \n");
+	//estrutura de repetição para cadastro, existe um parâmetro de armazenamento implementado no código.
+	//texto de apresentação, necessário a estilização
+		printf("\n* ---------------------- SISTEMA ----------------------- *\n");
+		printf("\n* --------------------- SUS UniRuy --------------------- *\n ");
+		printf("\n* Seja bem-vindo(a) ao sistema de marcação de consultas! *\n ");
+		printf("\n Para iniciar o atendimento escolha a opção desejada:\n \n");
 		printf("\n  1 - Cadastre-se. \n");
-		printf("\n  2 - Saida.\n");
+		printf("\n  2 - Saída.\n");
 		//recolhimento de dados
 		scanf("%d", &op);
 		//limpeza de tela
 		system("cls");
 		
-		//implementa��o de switch para op��es
+		//implementação de switch para opções
 		if (op==1){
 			Cadastro();
 		}else if(op==2){
@@ -603,4 +588,3 @@ setlocale(LC_ALL,"");
 			}while(op!= 4);
 //finalizado
 }
-
